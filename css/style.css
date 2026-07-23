@@ -165,25 +165,7 @@ a {
 .doodle-rocket-2 { top: 0; left: 12%; width: 100px; }
 .doodle-bulb { bottom: -5%; right: 25%; width: 120px; z-index: 3; }
 
-/* Side Widget */
-.side-widget {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #333;
-  padding: 10px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  cursor: pointer;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-  transition: background-color 0.3s;
-}
-.side-widget:hover { background-color: #444; }
+
 
 /* Sub-page layouts */
 .subpage-layout { display: flex; gap: 4rem; align-items: center; padding: 4rem 4rem 2rem 4rem; max-width: 1400px; margin: 0 auto; }
