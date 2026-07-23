@@ -1,4 +1,4 @@
-# AltStart Website Clone
+# AltStart Website 
 
 A 1:1 pixel-perfect clone of [AltStart](https://altstart.in/) built with clean HTML5, CSS3, Vanilla JS, and Python SPA routing server.
 
