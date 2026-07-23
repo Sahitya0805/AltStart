@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltStart</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container" onclick="navigateTo('/')">
+            <img src="assets/logo.png" alt="AltStart" style="height: 2.5rem; width: auto; display: block;">
+        </div>
+        
+        <div class="nav-links">
+            <a href="/" class="nav-item" data-link>Home</a>
+            <a href="/our-services" class="nav-item" data-link>Our Services</a>
+            <a href="/about-us" class="nav-item" data-link>About Us</a>
+            <a href="/contact-us" class="nav-item" data-link>Contact Us</a>
+            <button class="btn-talk" onclick="openCalendlyModal()">Let's Talk</button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="side-widget">
+        <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: var(--color-secondary);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+    </div>
+    <main id="app-container">
+
+        <!-- 1. HOME SECTION -->
+        <section id="home" class="page-section active" style="background-color: var(--color-primary); width: 100%;">
+            <!-- Hero -->
+            <div class="hero-section" style="max-width: 1400px; margin: 0 auto; padding: 4rem 2rem; display: flex; align-items: center; justify-content: space-between;">
+                <div class="content-left" style="flex: 1; max-width: 60%; padding-right: 2rem;">
+                    <h1 class="title-main" style="color: #fff; line-height: 1.1;">
+                        <span style="display: block; white-space: nowrap;">Transform Talent With</span>
+                        <span class="title-underline">AltStart</span>
+                    </h1>
+                    <p class="subtitle" style="color: #fff;">
+                        AI is revolutionizing teamwork! It unlocks growth, refines customer experiences, and boosts retention. AltStart now to empower your talent and propel your teams to excellence with AI!
+                    </p>
+                    <button class="btn-primary" onclick="openCalendlyModal()">Click here to schedule!</button>
+                </div>
+                
+                <div class="content-right" style="flex: 1; position: relative; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/home2.png" alt="AltStart Hero Graphic" style="width: 100%; max-width: 480px; height: auto; object-fit: contain; position: relative; z-index: 2;">
+                </div>
+            </div>
+
+            <!-- Scroll Content (White Background section) -->
+            <div class="home-scroll-content">
+                
+                <!-- Explore Services -->
+                <div class="section-block">
+                    <div class="section-header">
+                        <span class="section-label">EXPLORE OUR SERVICES</span>
+                        <h2 class="section-title">Transform Talent, Achieve the Extraordinary!</h2>
+                    </div>
+                    
+                    <div class="services-tabs-container">
+                        <div class="tabs-left">
+                            <button class="tab-btn active" data-tab="universities" onclick="switchTab(this, 'universities')">
+                                For Universities
+                                <div class="tab-icon-wrapper">
+                                    <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                                </div>
+                            </button>
+                            <button class="tab-btn" data-tab="organizations" onclick="switchTab(this, 'organizations')">
+                                For Organizations
+                                <div class="tab-icon-wrapper">
+                                    <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                                </div>
+                            </button>
+                            <button class="tab-btn" data-tab="individuals" onclick="switchTab(this, 'individuals')">
+                                For Individuals and Teams
+                                <div class="tab-icon-wrapper">
+                                    <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="tabs-right">
+                            <div class="tabs-content" id="tab-universities">
+                                <p>Elevate your university's academic offerings by empowering both faculty and students with our cutting-edge AI training programs. Equip professors with the latest tools to seamlessly weave AI into their curriculum, ensuring they teach with confidence and foresight. At the same time, arm your students with hands-on, real-world AI skills that make them stand out in a competitive job market. Invest in knowledge today to harvest success tomorrow—let us help you cultivate a future-ready workforce.</p>
+                                <ul><li><a href="#">Learn More</a></li></ul>
+                            </div>
+                            <div class="tabs-content" id="tab-organizations" style="display:none;">
+                                <p>Empower your organization with AI-driven strategies that unlock growth, optimize operations, and drive innovation. Our customized training programs are designed for corporate teams at every level—from executive leadership to frontline employees—helping your entire workforce confidently navigate the AI revolution and stay ahead of the competition.</p>
+                                <ul><li><a href="#">Learn More</a></li></ul>
+                            </div>
+                            <div class="tabs-content" id="tab-individuals" style="display:none;">
+                                <p>Whether you're an individual professional, a startup team, or a freelancer, AltStart gives you the AI skills to supercharge your career and output. Our practical, hands-on training programs are built for real-world application—helping you deliver more value, land better opportunities, and stay future-ready in a rapidly evolving job market.</p>
+                                <ul><li><a href="#">Learn More</a></li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>                <!-- About AltStart -->
+                <div class="about-altstart">
+                    <div class="about-grid">
+                        <div class="about-col-left">
+                            <span class="section-label">ABOUT ALTSTART</span>
+                            <h2 class="section-title">What is AltStart?</h2>
+                        </div>
+                        <div class="about-col-right">
+                            <p><strong>AltStart</strong> is your launchpad to an AI-powered future. We ignite a passion for understanding and utilizing AI within your workforce, transforming them into "alternative starters" who spark innovation and drive growth. Our customized training programs unlock the hidden genius within your teams, empowering them to become AI alchemists and propel your organization to limitless potential.</p>
+                            <a href="#">More about our unique approach</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Pill Banner -->
+                <div class="yellow-pill-banner">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                            <div class="stat-text">
+                                <h3>3,000+</h3>
+                                <p>Community members</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                            <div class="stat-text">
+                                <h3>100+</h3>
+                                <p>Opportunities created</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                            <div class="stat-text">
+                                <h3>50+</h3>
+                                <p>Projects Build</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                            <div class="stat-text">
+                                <h3>20+</h3>
+                                <p>Companies and Partners</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why AltStart Features Section -->
+                <div class="section-header" style="margin-top: 10rem;">
+                    <span class="section-label">WHY ALTSTART</span>
+                    <h2 class="section-title">Forge the AI Edge in Your Workforce</h2>
+                    <p style="margin-top: 1.5rem; color: #444; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6; font-size: 1.05rem;">
+                        The future of business is powered by AI fluency. AltStart equips your teams with the cutting-edge skills and strategic thinking to become AI-ready. Here's how we unlock your organization's potential:
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-small"><svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 19.99z"/></svg></div>
+                        <h3 class="feature-title">AI Expertise, Unleashed</h3>
+                        <p class="feature-desc">We go beyond basic training, crafting comprehensive programs that transform your workforce into AI specialists.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-small"><svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 19.99z"/></svg></div>
+                        <h3 class="feature-title">Strategic Advantage</h3>
+                        <p class="feature-desc">Our training isn't just about technical skills. We foster a deep understanding of how to leverage AI for strategic advantage.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-small"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+                        <h3 class="feature-title">Future-Proof Your Workforce</h3>
+                        <p class="feature-desc">The world of work is constantly evolving. AltStart equips your teams with the adaptability and critical thinking required to thrive in an AI-driven future.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-small"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+                        <h3 class="feature-title">Success Through Transformation</h3>
+                        <p class="feature-desc">We don't just train; we partner with you. We work collaboratively to understand your unique needs and goals.</p>
+                    </div>
+                </div>
+
+                <!-- CTA Banner -->
+                <div class="yellow-pill-banner" style="margin-top: 4rem;">
+                    <div class="cta-banner-content">
+                        <h2>Get your free<br>Consultation Call</h2>
+                        <div class="cta-checks">
+                            <div class="cta-check-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                30-min strategy call
+                            </div>
+                            <div class="cta-check-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                In-depth audit
+                            </div>
+                            <div class="cta-check-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                Growth Roadmap
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-white" onclick="openCalendlyModal()">Click here to schedule!</button>
+                    </div>
+                </div>
+
+                <!-- Partners Marquee -->
+                <div class="partners-section">
+                    <h2>Whom we have worked with?</h2>
+                    <div class="marquee-container">
+                        <div class="partners-grid">
+                            <div class="partner-item"><img src="https://altstart.in/static/media/6.81e63b2b2a24fdcd30f8.jpg" alt="Arthlex Research" class="partner-logo"><span class="partner-name">Arthlex Research</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/16.bf7df40f3bb1018d9d39.png" alt="Career Clap" class="partner-logo"><span class="partner-name">Career Clap</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/2.6a8c24c6376e8aef6895.png" alt="Cuvette" class="partner-logo"><span class="partner-name">Cuvette</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/5.e95d6fe701b534f3bd5c.png" alt="DefiVerse" class="partner-logo"><span class="partner-name">DefiVerse</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/3.6573c706e6a5b2397847.jpeg" alt="FinoBird" class="partner-logo"><span class="partner-name">FinoBird</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/4.beccb7128c78a593176b.png" alt="Give My Certificate" class="partner-logo"><span class="partner-name">Give My Certificate</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/17.3d36c830c58694dac1cb.png" alt="LM Basket" class="partner-logo"><span class="partner-name">LM Basket</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/7.252ea276bd0a50acef7f.jpeg" alt="Luster" class="partner-logo"><span class="partner-name">Luster</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/9.0aff19b0493abc3e86ea.jpg" alt="MetaWork" class="partner-logo"><span class="partner-name">MetaWork</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/13.449f5afd01b1a806d5b6.jpeg" alt="Tezos India" class="partner-logo"><span class="partner-name">Tezos India</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/10.5f607fb99d59bac485ea.jpeg" alt="Threeway Studio" class="partner-logo"><span class="partner-name">Threeway Studio</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/14.f5d0daf8b9365a17183e.jpeg" alt="Trikon" class="partner-logo"><span class="partner-name">Trikon</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/18.97ffbdb2ffa12b4c4b4d.png" alt="Upanyas" class="partner-logo"><span class="partner-name">Upanyas</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/6.95cbb5f3107389c4d5aa.jpeg" alt="Codedu" class="partner-logo"><span class="partner-name">Codedu</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/7.fb8799475b773cc2f6e2.jpeg" alt="Gaming Geeks" class="partner-logo"><span class="partner-name">Gaming Geeks</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/10.9c3b8d6d3a52b86a2ef9.jpeg" alt="She Builds" class="partner-logo"><span class="partner-name">She Builds</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/11.42ab6aa21a18affb90cd.jpeg" alt="SOS Tech" class="partner-logo"><span class="partner-name">SOS Tech</span></div>
+                        </div>
+                        <div class="partners-grid">
+                            <div class="partner-item"><img src="https://altstart.in/static/media/6.81e63b2b2a24fdcd30f8.jpg" alt="Arthlex Research" class="partner-logo"><span class="partner-name">Arthlex Research</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/16.bf7df40f3bb1018d9d39.png" alt="Career Clap" class="partner-logo"><span class="partner-name">Career Clap</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/2.6a8c24c6376e8aef6895.png" alt="Cuvette" class="partner-logo"><span class="partner-name">Cuvette</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/5.e95d6fe701b534f3bd5c.png" alt="DefiVerse" class="partner-logo"><span class="partner-name">DefiVerse</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/3.6573c706e6a5b2397847.jpeg" alt="FinoBird" class="partner-logo"><span class="partner-name">FinoBird</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/4.beccb7128c78a593176b.png" alt="Give My Certificate" class="partner-logo"><span class="partner-name">Give My Certificate</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/17.3d36c830c58694dac1cb.png" alt="LM Basket" class="partner-logo"><span class="partner-name">LM Basket</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/7.252ea276bd0a50acef7f.jpeg" alt="Luster" class="partner-logo"><span class="partner-name">Luster</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/9.0aff19b0493abc3e86ea.jpg" alt="MetaWork" class="partner-logo"><span class="partner-name">MetaWork</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/13.449f5afd01b1a806d5b6.jpeg" alt="Tezos India" class="partner-logo"><span class="partner-name">Tezos India</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/10.5f607fb99d59bac485ea.jpeg" alt="Threeway Studio" class="partner-logo"><span class="partner-name">Threeway Studio</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/14.f5d0daf8b9365a17183e.jpeg" alt="Trikon" class="partner-logo"><span class="partner-name">Trikon</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/18.97ffbdb2ffa12b4c4b4d.png" alt="Upanyas" class="partner-logo"><span class="partner-name">Upanyas</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/6.95cbb5f3107389c4d5aa.jpeg" alt="Codedu" class="partner-logo"><span class="partner-name">Codedu</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/7.fb8799475b773cc2f6e2.jpeg" alt="Gaming Geeks" class="partner-logo"><span class="partner-name">Gaming Geeks</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/10.9c3b8d6d3a52b86a2ef9.jpeg" alt="She Builds" class="partner-logo"><span class="partner-name">She Builds</span></div>
+                            <div class="partner-item"><img src="https://altstart.in/static/media/11.42ab6aa21a18affb90cd.jpeg" alt="SOS Tech" class="partner-logo"><span class="partner-name">SOS Tech</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="testimonials-section" style="padding: 6rem 0; max-width: 1200px; margin: 0 auto; display: flex; gap: 4rem; align-items: center;">
+                    <div class="testimonial-left" style="flex: 1;">
+                        <h2 style="font-family: var(--font-heading); font-size: 3rem; font-weight: 700; color: #000; line-height: 1.2; margin-bottom: 3rem;">What do people have to say about us?</h2>
+                        <div class="satisfaction-card" style="background: #fff; border-radius: 16px; padding: 2rem; display: flex; align-items: center; gap: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 400px;">
+                            <div class="sat-icon" style="background: #f7f9e1; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; fill: #b2ba4d;"><path d="M13.13 22.19L11.5 18.36C10.07 18 8.84 17.15 8 15.96V19.5L4 18V9.5C4 8.7 4.29 7.97 4.77 7.4L10 2.17l5.23 5.23C15.71 7.97 16 8.7 16 9.5v6.46c-.84 1.19-2.07 2.04-3.5 2.4l-1.63 3.83-1.87-1.87c-.89-.89-1.39-2.09-1.39-3.35v-1.74l1.83 1.83 1.69-3.96zM10 5.41L6 9.41V16c1.1 0 2-.9 2-2s-.9-2-2-2 2-1 2-2-.9-2-2-2v-1.59l4-4 4 4V16c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2-2-1-2-2 2-1 2-2V9.41l-4-4z"/></svg>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 2.2rem; font-weight: 700; color: #000; margin-bottom: 0.2rem;">90%</h3>
+                                <p style="color: #666; font-size: 0.95rem;">Average client satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-right" style="flex: 1; padding-top: 2rem;">
+                        <div class="testimonial-nav" style="display: flex; gap: 1rem; justify-content: flex-end; margin-bottom: 2rem;">
+                            <button style="width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: #555;"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg></button>
+                            <button style="width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: #555;"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></button>
+                        </div>
+                        <p style="font-size: 1.25rem; font-style: italic; color: #444; line-height: 1.6; margin-bottom: 2rem;">
+                            "I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad that we at upanyas decided to work with you."
+                        </p>
+                        <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80" alt="Aman" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h4 style="font-weight: 700; color: #000; font-size: 1rem;">@ Aman</h4>
+                                <p style="color: #666; font-size: 0.9rem;">Team Upanyaas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 2. OUR SERVICES SECTION -->
+        <section id="services" class="page-section" style="background: #fff;">
+
+            <!-- Services Hero with Exact Vivid Yellow Gradient -->
+            <div class="services-hero-wrap" style="background: linear-gradient(180deg, #ffe548 0%, #fff068 35%, #fff9b0 65%, #fffde7 88%, #ffffff 100%); padding: 5rem 4rem 6rem 4rem;">
+                <div style="max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem;">
+                    <div style="flex: 1; max-width: 480px;">
+                        <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: #555; margin-bottom: 1.5rem; font-weight: 600;">OUR SERVICES</div>
+                        <h1 style="font-family: var(--font-heading); font-size: 3.4rem; font-weight: 700; line-height: 1.15; color: #000; margin-bottom: 1.5rem;">Solutions for business<br>growth</h1>
+                        <p style="color: #333; font-size: 1rem; line-height: 1.6;">Here's how AltStart ignites innovation and drives success for you:</p>
+                    </div>
+                    <div style="flex: 1; position: relative; min-height: 480px; display: flex; align-items: center; justify-content: center;">
+                        <!-- Rocket doodle with curved trail matching screenshot 2 -->
+                        <div style="position: absolute; top: -35px; left: 2%; z-index: 3;">
+                            <svg width="120" height="200" viewBox="0 0 120 200">
+                                <!-- Rocket body pointing up-right -->
+                                <g transform="translate(65, 20) rotate(25)">
+                                    <path d="M 16,0 C 30,12 30,32 16,45 C 2,32 2,12 16,0 Z" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+                                    <circle cx="16" cy="16" r="4.5" fill="#000000"/>
+                                    <path d="M 6,36 L 0,44 M 26,36 L 32,44" stroke="#000000" stroke-width="2.5"/>
+                                </g>
+                                <!-- Curved smoke trail down the left side -->
+                                <path d="M 68,58 C 25,82 18,135 55,185" fill="none" stroke="#000000" stroke-width="2.2"/>
+                                <path d="M 60,65 C 18,90 10,138 46,188" fill="none" stroke="#000000" stroke-width="1.8"/>
+                                <path d="M 76,62 C 32,85 24,136 62,182" fill="none" stroke="#000000" stroke-width="1.8"/>
+                            </svg>
+                        </div>
+
+                        <!-- Left photo (Meeting photo) -->
+                        <img src="assets/services/our-serices-info-1.29b472dce845cd73820b.jpg" alt="Business Growth Meeting" style="width: 235px; height: 360px; object-fit: cover; border-radius: 28px; position: absolute; left: 10%; bottom: 15px; z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        
+                        <!-- Right photo (Seminar auditorium) -->
+                        <img src="assets/services/our-serices-info-2.95a8f961ed042ba743cc.jpg" alt="Seminar Hall" style="width: 215px; height: 320px; object-fit: cover; border-radius: 28px; position: absolute; right: 5%; top: 15px; z-index: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                        
+                        <!-- Chart doodle matching screenshot 2 -->
+                        <div style="position: absolute; bottom: -20px; right: 0%; z-index: 3; transform: rotate(10deg);">
+                            <svg width="150" height="115" viewBox="0 0 150 115">
+                                <rect x="5" y="5" width="138" height="104" rx="16" fill="#ffffff" stroke="#000000" stroke-width="2.2"/>
+                                <!-- Pie chart -->
+                                <circle cx="46" cy="50" r="25" fill="none" stroke="#000000" stroke-width="2"/>
+                                <path d="M 46,50 L 46,25 M 46,50 L 68,60 M 46,50 L 26,62" stroke="#000000" stroke-width="2"/>
+                                <text x="26" y="52" font-size="9.5" font-family="sans-serif" font-weight="bold" fill="#000000">80%</text>
+                                <!-- Bar/Lines & Trend graph -->
+                                <line x1="88" y1="28" x2="122" y2="28" stroke="#000000" stroke-width="2.2"/>
+                                <line x1="88" y1="36" x2="110" y2="36" stroke="#000000" stroke-width="2.2"/>
+                                <!-- Line graph -->
+                                <polyline points="86,84 98,66 110,76 126,52" fill="none" stroke="#000000" stroke-width="2.2"/>
+                                <line x1="86" y1="88" x2="128" y2="88" stroke="#000000" stroke-width="1.8"/>
+                                <line x1="86" y1="88" x2="86" y2="48" stroke="#000000" stroke-width="1.8"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Body (white background) -->
+            <div style="background: #fff; padding: 5rem 0 3rem 0;">
+                <div style="max-width: 1100px; margin: 0 auto; padding: 0 4rem;">
+
+                <!-- Main heading -->
+                <div style="text-align: center; margin-bottom: 5rem;">
+                    <h2 style="font-family: var(--font-heading); font-size: 3rem; font-weight: 800; color: #000; line-height: 1.25; max-width: 780px; margin: 0 auto 1.2rem auto;">Unleash the Power of Human + Machine with <span style="color: #b2ba4d;">AltStart</span></h2>
+                    <p style="color: #555; font-size: 1rem;">Here's how AltStart ignites innovation and drives success for you:</p>
+                </div>
+
+                <!-- Service Card 1: For Universities -->
+                <div class="svc-card">
+                    <div class="svc-card-content">
+                        <h3 class="svc-card-title">For Universities</h3>
+                        <div class="svc-item">
+                            <span class="svc-check-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10" fill="#7a8a1a"/><path d="M7 12.5l3.5 3.5 6-7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <p><strong>Professor Development:</strong> Equip your faculty with the latest AI knowledge and best practices through comprehensive training programs. We can help professors integrate AI into their curriculum, ensuring students graduate with the skills needed to thrive in the AI-driven workforce.</p>
+                        </div>
+                            <div class="svc-item">
+                            <span class="svc-check-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10" fill="#7a8a1a"/><path d="M7 12.5l3.5 3.5 6-7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <p><strong>Student Empowerment:</strong> Offer in-demand AI courses and workshops for students, preparing them for future careers. We provide hands-on learning experiences with real-world applications, making them valuable assets upon graduation.</p>
+                        </div>
+                    </div>
+                    <div class="svc-card-img">
+                        <img src="assets/services/our-serices-info-1.29b472dce845cd73820b.jpg" alt="University Students" style="width: 100%; height: 380px; object-fit: cover; border-radius: 16px;">
+                    </div>
+                </div>
+
+                <!-- Service Card 2: For Organizations (image left) -->
+                <div class="svc-card svc-card-reverse">
+                    <div class="svc-card-img">
+                        <img src="assets/services/our-serices-info-2.95a8f961ed042ba743cc.jpg" alt="Organization Team" style="width: 100%; height: 380px; object-fit: cover; border-radius: 16px;">
+                    </div>
+                    <div class="svc-card-content">
+                        <h3 class="svc-card-title">For Organizations</h3>
+                            <div class="svc-item">
+                            <span class="svc-check-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10" fill="#7a8a1a"/><path d="M7 12.5l3.5 3.5 6-7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <p><strong>Customized Training:</strong> We tailor AI training programs to your specific needs and industry. From foundational AI concepts to advanced applications, we equip your workforce with the skills needed to revolutionize your operations.</p>
+                        </div>
+                            <div class="svc-item">
+                            <span class="svc-check-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10" fill="#7a8a1a"/><path d="M7 12.5l3.5 3.5 6-7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <p><strong>Unlocking Innovation:</strong> Foster a culture of innovation within your organization by empowering employees to leverage AI for problem-solving and creative thinking. We help you identify AI opportunities and integrate them seamlessly into your workflows.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 3: For Individuals & Teams -->
+                <div class="svc-card">
+                    <div class="svc-card-content">
+                        <h3 class="svc-card-title">For Individuals &amp; Teams</h3>
+                            <div class="svc-item">
+                            <span class="svc-check-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10" fill="#7a8a1a"/><path d="M7 12.5l3.5 3.5 6-7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <p><strong>Idea Incubator:</strong> Take your ideas from the drawing board to reality. Our interactive workshops and courses provide the tools and knowledge to leverage AI at every stage of the product development process, from initial brainstorming to prototyping and testing.</p>
+                        </div>
+                            <div class="svc-item">
+                            <span class="svc-check-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10" fill="#7a8a1a"/><path d="M7 12.5l3.5 3.5 6-7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <p><strong>Become an Innovation Catalyst:</strong> Empower yourself to be the driving force behind groundbreaking products. Our programs develop your ability to think critically, iterate on ideas, and leverage AI to create solutions that make a difference.</p>
+                        </div>
+                    </div>
+                    <div class="svc-card-img">
+                        <img src="assets/services/our-serices-info-3.56c2ba247b5416eac554.png" alt="Individual Professional" style="width: 100%; height: 380px; object-fit: cover; border-radius: 16px;">
+                    </div>
+                </div>
+
+                <!-- Community Partners -->
+                <div style="margin-top: 6rem;">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 3rem;">Community Partners</h2>
+                    <div class="svc-partners-marquee-wrap">
+                        <div class="svc-marquee-track">
+                            <div class="svc-logos-row">
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/11.42ab6aa21a18affb90cd.jpeg" alt="SOS Tech"><span>SOS Tech</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/12.238d4db48f3ce62d207e.png" alt="TechDirective"><span>TechDirective</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/13.104c05b21687629fc985.png" alt="ThoughtWays"><span>ThoughtWays</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/14.af7c93598357f0f98a21.jpeg" alt="Web3 Panjab"><span>Web3 Panjab</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/1.1ce3b08c04620110bc41.jpeg" alt="Amity Coding Club"><span>Amity Coding Club</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/3.136ac376c68acc88c3bb.jpeg" alt="Befikra"><span>Befikra</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/4.fa48655676b42fb16623.jpeg" alt="Blockchain Club SRM"><span>Blockchain Club SRM</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/5.8c826dee111c93ae2b86.jpeg" alt="ChatraShala"><span>ChatraShala</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/6.95cbb5f3107389c4d5aa.jpeg" alt="Codedu"><span>Codedu</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/7.fb8799475b773cc2f6e2.jpeg" alt="Gaming Geeks"><span>Gaming Geeks</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/9.79a96c47d7e6ef37c968.jpeg" alt="Mighty IT Explorer"><span>Mighty IT Explorer</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/10.9c3b8d6d3a52b86a2ef9.jpeg" alt="She Builds"><span>She Builds</span></div>
+                            </div>
+                            <div class="svc-logos-row" aria-hidden="true">
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/11.42ab6aa21a18affb90cd.jpeg" alt="SOS Tech"><span>SOS Tech</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/12.238d4db48f3ce62d207e.png" alt="TechDirective"><span>TechDirective</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/13.104c05b21687629fc985.png" alt="ThoughtWays"><span>ThoughtWays</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/14.af7c93598357f0f98a21.jpeg" alt="Web3 Panjab"><span>Web3 Panjab</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/1.1ce3b08c04620110bc41.jpeg" alt="Amity Coding Club"><span>Amity Coding Club</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/3.136ac376c68acc88c3bb.jpeg" alt="Befikra"><span>Befikra</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/4.fa48655676b42fb16623.jpeg" alt="Blockchain Club SRM"><span>Blockchain Club SRM</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/5.8c826dee111c93ae2b86.jpeg" alt="ChatraShala"><span>ChatraShala</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/6.95cbb5f3107389c4d5aa.jpeg" alt="Codedu"><span>Codedu</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/7.fb8799475b773cc2f6e2.jpeg" alt="Gaming Geeks"><span>Gaming Geeks</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/9.79a96c47d7e6ef37c968.jpeg" alt="Mighty IT Explorer"><span>Mighty IT Explorer</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/10.9c3b8d6d3a52b86a2ef9.jpeg" alt="She Builds"><span>She Builds</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Partners -->
+                <div style="margin-top: 5rem; padding-bottom: 2rem;">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 3rem;">Company Partners</h2>
+                    <div class="svc-partners-marquee-wrap">
+                        <div class="svc-marquee-track" style="animation-direction: reverse;">
+                            <div class="svc-logos-row">
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/10.5f607fb99d59bac485ea.jpeg" alt="Threeway Studio"><span>Threeway Studio</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/14.f5d0daf8b9365a17183e.jpeg" alt="Trikon"><span>Trikon</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/18.97ffbdb2ffa12b4c4b4d.png" alt="Upanyas"><span>Upanyas</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/11.8900eec28405999698c0.jpeg" alt="Vikram"><span>Vikram</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/6.81e63b2b2a24fdcd30f8.jpg" alt="Arthlex Research"><span>Arthlex Research</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/16.bf7df40f3bb1018d9d39.png" alt="Career Clap"><span>Career Clap</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/2.6a8c24c6376e8aef6895.png" alt="Cuvette"><span>Cuvette</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/5.e95d6fe701b534f3bd5c.png" alt="DefiVerse"><span>DefiVerse</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/3.6573c706e6a5b2397847.jpeg" alt="FinoBird"><span>FinoBird</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/4.beccb7128c78a593176b.png" alt="Give My Certificate"><span>Give My Certificate</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/17.3d36c830c58694dac1cb.png" alt="LM Basket"><span>LM Basket</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/9.0aff19b0493abc3e86ea.jpg" alt="MetaWork"><span>MetaWork</span></div>
+                            </div>
+                            <div class="svc-logos-row" aria-hidden="true">
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/10.5f607fb99d59bac485ea.jpeg" alt="Threeway Studio"><span>Threeway Studio</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/14.f5d0daf8b9365a17183e.jpeg" alt="Trikon"><span>Trikon</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/18.97ffbdb2ffa12b4c4b4d.png" alt="Upanyas"><span>Upanyas</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/11.8900eec28405999698c0.jpeg" alt="Vikram"><span>Vikram</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/6.81e63b2b2a24fdcd30f8.jpg" alt="Arthlex Research"><span>Arthlex Research</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/16.bf7df40f3bb1018d9d39.png" alt="Career Clap"><span>Career Clap</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/2.6a8c24c6376e8aef6895.png" alt="Cuvette"><span>Cuvette</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/5.e95d6fe701b534f3bd5c.png" alt="DefiVerse"><span>DefiVerse</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/3.6573c706e6a5b2397847.jpeg" alt="FinoBird"><span>FinoBird</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/4.beccb7128c78a593176b.png" alt="Give My Certificate"><span>Give My Certificate</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/17.3d36c830c58694dac1cb.png" alt="LM Basket"><span>LM Basket</span></div>
+                                <div class="svc-logo-item"><img src="https://altstart.in/static/media/9.0aff19b0493abc3e86ea.jpg" alt="MetaWork"><span>MetaWork</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Consultation Banner -->
+                <div class="yellow-pill-banner" style="margin-top: 4rem; margin-bottom: 5rem;">
+                    <div class="cta-banner-content">
+                        <h2>Get your free<br>Consultation Call</h2>
+                        <div class="cta-checks">
+                            <div class="cta-check-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                30-min strategy call
+                            </div>
+                            <div class="cta-check-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                In-depth audit
+                            </div>
+                            <div class="cta-check-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                Growth Roadmap
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-white" onclick="openCalendlyModal()">Click here to schedule!</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 3. ABOUT US SECTION -->
+        <section id="about" class="page-section" style="background: #fff;">
+
+            <!-- About Hero with Light Yellow Gradient -->
+            <div style="background: linear-gradient(180deg, #fff385 0%, #fff7a3 40%, #fffcce 75%, #ffffff 100%); padding: 5rem 4rem 6rem 4rem;">
+                <div style="max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem;">
+                    <div style="flex: 1; max-width: 480px;">
+                        <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: #555; margin-bottom: 1.5rem; font-weight: 600;">ABOUT US</div>
+                        <h1 style="font-family: var(--font-heading); font-size: 3.5rem; font-weight: 700; line-height: 1.15; color: #000; margin-bottom: 1.5rem;">Ignite Innovation.<br>Drive Growth.</h1>
+                        <p style="color: #333; font-size: 1.05rem; line-height: 1.65;">A world where every team member is an "alternative starter," not just going through the motions, but actively sparking innovation and driving growth. That's the world AltStart helps you build.</p>
+                    </div>
+                    <div style="flex: 1; display: flex; justify-content: flex-end;">
+                        <img src="assets/about/about-us-hero-section.44d5cd2971733dd53c1d.png" alt="About AltStart Team" style="width: 100%; max-width: 560px; border-radius: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Era of Organizational Excellence -->
+            <div style="background: #fff; padding: 5rem 4rem 3rem 4rem;">
+                <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 700; color: #000; margin-bottom: 1.5rem;">
+                        Welcome to a New Era of <span style="border-bottom: 3px solid #b2ba4d; padding-bottom: 2px;">Organizational Excellence</span>
+                    </h2>
+                    <p style="color: #555; font-size: 1.05rem; line-height: 1.7; max-width: 850px; margin: 0 auto 3.5rem auto;">
+                        Imagine a world where your organization operates on a completely different level. A world where every team member is an 'alternative starter,' not just going through the motions, but actively sparking innovation and driving growth. That's the world AltStart helps you build.
+                    </p>
+                    <img src="assets/about/organizational-behavior.10af6bb87a5824ae0511.png" alt="Organizational Behavior Team" style="width: 100%; border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 6rem;">
+                </div>
+            </div>
+
+            <!-- Our Philosophy & Three Cards -->
+            <div style="background: #fff; padding: 0 4rem;">
+                <div style="max-width: 1100px; margin: 0 auto;">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; color: #000; text-align: center; margin-bottom: 1.2rem;">Our Philosophy</h2>
+                    <p style="color: #555; font-size: 1.02rem; text-align: center; max-width: 820px; margin: 0 auto 3.5rem auto; line-height: 1.65;">
+                        We weren't born from the traditional mold. We saw the limitations of the status quo, the rote training programs that left talent untapped and businesses stagnant. So, we took a different approach, an 'AltStart' approach.
+                    </p>
+
+                    <!-- Three Cards -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 5rem;">
+                        <!-- Card 1 -->
+                        <div style="background: #fafafa; border: 1px solid #f0f0f0; border-radius: 24px; padding: 3rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                            <div style="background: #fef08a; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #858c1f;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                            </div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: #000; line-height: 1.4;">Ignite A Fire Of Innovation</h3>
+                        </div>
+                        <!-- Card 2 -->
+                        <div style="background: #fafafa; border: 1px solid #f0f0f0; border-radius: 24px; padding: 3rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                            <div style="background: #fef08a; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #858c1f;"><path d="M12 2a9 9 0 0 0-9 9c0 3.3 1.8 6.2 4.5 7.7V20a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-1.3C19.2 17.2 21 14.3 21 11a9 9 0 0 0-9-9z"/></svg>
+                            </div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: #000; line-height: 1.4;">Cultivate A Passion For Cutting-Edge Tools</h3>
+                        </div>
+                        <!-- Card 3 -->
+                        <div style="background: #fafafa; border: 1px solid #f0f0f0; border-radius: 24px; padding: 3rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                            <div style="background: #fef08a; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #858c1f;"><path d="M21 16.5C21 16.88 20.79 17.21 20.47 17.38L12.57 21.82C12.41 21.91 12.22 21.96 12.03 21.96C11.84 21.96 11.65 21.91 11.49 21.82L3.59 17.38C3.27 17.21 3.06 16.88 3.06 16.5V7.5C3.06 7.12 3.27 6.79 3.59 6.62L11.49 2.18C11.81 2 12.25 2 12.57 2.18L20.47 6.62C20.79 6.79 21 7.12 21 7.5V16.5Z"/></svg>
+                            </div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: #000; line-height: 1.4;">Empower Workforce To Become AI Alchemists</h3>
+                        </div>
+                    </div>
+
+                    <!-- Our Story Olive Banner -->
+                    <div style="background: #9ca332; border-radius: 32px; padding: 2.2rem 3rem; text-align: center; color: #fff; margin-bottom: 4rem;">
+                        <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; margin-bottom: 0.8rem; color: #fff;">Our Story</h2>
+                        <p style="font-size: 1rem; line-height: 1.65; color: rgba(255,255,255,0.95); max-width: 850px; margin: 0 auto;">
+                            Our story isn't just about us, though. It's about yours. It's about taking your organization from 'same old, same old' to a place of limitless potential. We'll be your partners in this journey, guiding you through customized training programs that unlock the hidden genius within your teams.
+                        </p>
+                    </div>
+
+                    <!-- What is AltStart? -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 4rem; margin-bottom: 5rem;">
+                        <div style="flex: 1; max-width: 400px;">
+                            <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: #555; margin-bottom: 1rem; font-weight: 600;">ABOUT ALTSTART</div>
+                            <h2 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 700; color: #000;">What is AltStart?</h2>
+                        </div>
+                        <div style="flex: 1; max-width: 560px;">
+                            <p style="color: #333; font-size: 1.02rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                                <strong>AltStart</strong> is your launchpad to an AI-powered future. We ignite a passion for understanding and utilizing AI within your workforce, transforming them into "alternative starters" who spark innovation and drive growth. Our customized training programs unlock the hidden genius within your teams, empowering them to become AI alchemists and propel your organization to limitless potential.
+                            </p>
+                            <a href="#" style="color: #858c1f; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; font-size: 0.95rem;">More about our unique approach</a>
+                        </div>
+                    </div>
+
+                    <!-- Yellow Stats Pill Banner -->
+                    <div style="background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%); border-radius: 36px; padding: 2.5rem 3rem; display: flex; justify-content: space-around; align-items: center; margin-bottom: 6rem;">
+                        <!-- Stat 1 -->
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="background: rgba(255,255,255,0.6); width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: #858c1f;"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                            </div>
+                            <div>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #000; margin: 0;">3,000+</h3>
+                                <p style="font-size: 0.85rem; color: #555; margin: 0; font-weight: 500;">Community members</p>
+                            </div>
+                        </div>
+                        <!-- Stat 2 -->
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="background: rgba(255,255,255,0.6); width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: #858c1f;"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                            </div>
+                            <div>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #000; margin: 0;">100+</h3>
+                                <p style="font-size: 0.85rem; color: #555; margin: 0; font-weight: 500;">Opportunities created</p>
+                            </div>
+                        </div>
+                        <!-- Stat 3 -->
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="background: rgba(255,255,255,0.6); width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: #858c1f;"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                            </div>
+                            <div>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #000; margin: 0;">50+</h3>
+                                <p style="font-size: 0.85rem; color: #555; margin: 0; font-weight: 500;">Projects Build</p>
+                            </div>
+                        </div>
+                        <!-- Stat 4 -->
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="background: rgba(255,255,255,0.6); width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: #858c1f;"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10z"/></svg>
+                            </div>
+                            <div>
+                                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #000; margin: 0;">20+</h3>
+                                <p style="font-size: 0.85rem; color: #555; margin: 0; font-weight: 500;">Companies and Partners</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consultation Call Banner -->
+                    <div class="yellow-pill-banner" style="margin-top: 4rem; margin-bottom: 5rem;">
+                        <div class="cta-banner-content">
+                            <h2>Get your free<br>Consultation Call</h2>
+                            <div class="cta-checks">
+                                <div class="cta-check-item">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                    30-min strategy call
+                                </div>
+                                <div class="cta-check-item">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                    In-depth audit
+                                </div>
+                                <div class="cta-check-item">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                    Growth Roadmap
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn-white" onclick="openCalendlyModal()">Click here to schedule!</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- 4. CONTACT US SECTION -->
+        <section id="contact" class="page-section" style="background: linear-gradient(180deg, #fff385 0%, #fff7a3 40%, #fffcce 75%, #ffffff 100%); padding: 5rem 4rem 6rem 4rem; min-height: calc(100vh - 80px);">
+            <div style="max-width: 1300px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 5rem;">
+                <!-- Left: Content & Contact Details -->
+                <div style="flex: 1; max-width: 500px; padding-top: 1rem;">
+                    <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: #555; margin-bottom: 1.5rem; font-weight: 600;">CONTACT US</div>
+                    <h1 style="font-family: var(--font-heading); font-size: 3.5rem; font-weight: 800; line-height: 1.12; color: #000; margin-bottom: 1.5rem; letter-spacing: -1px;">
+                        We are here to help you grow
+                    </h1>
+                    <p style="color: #333; font-size: 1.05rem; line-height: 1.65; margin-bottom: 3.5rem;">
+                        Feel free to reach out to us through your preferred method of contact. We are eager to connect with you and explore how our team can contribute to your success.
+                    </p>
+                    
+                    <div style="display: flex; gap: 4rem;">
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: #000; margin-bottom: 0.6rem;">Phone Number</h4>
+                            <p style="font-size: 1rem; color: #333; font-weight: 500;">+91 91825 67700</p>
+                        </div>
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: #000; margin-bottom: 0.6rem;">Email Address</h4>
+                            <p style="font-size: 1rem; color: #333; font-weight: 500;">altstart.contact@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Form Container -->
+                <div style="flex: 1; max-width: 540px;">
+                    <div style="background: #ffffff; padding: 2.5rem 2.2rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.06);">
+                        <form onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will contact you shortly.');">
+                            <div style="margin-bottom: 1.2rem;">
+                                <input type="text" class="form-control" placeholder="Your name" required style="width: 100%; padding: 1.05rem 1.2rem; border: 1px solid #e5e7eb; border-radius: 12px; font-family: var(--font-body); font-size: 0.95rem; outline: none; background: #fff;">
+                            </div>
+                            <div style="margin-bottom: 1.2rem;">
+                                <input type="email" class="form-control" placeholder="Email" required style="width: 100%; padding: 1.05rem 1.2rem; border: 1px solid #e5e7eb; border-radius: 12px; font-family: var(--font-body); font-size: 0.95rem; outline: none; background: #fff;">
+                            </div>
+                            <div style="margin-bottom: 1.2rem;">
+                                <input type="text" class="form-control" placeholder="Company/University Name" style="width: 100%; padding: 1.05rem 1.2rem; border: 1px solid #e5e7eb; border-radius: 12px; font-family: var(--font-body); font-size: 0.95rem; outline: none; background: #fff;">
+                            </div>
+                            <div style="margin-bottom: 1.2rem;">
+                                <input type="tel" class="form-control" placeholder="Phone Number" style="width: 100%; padding: 1.05rem 1.2rem; border: 1px solid #e5e7eb; border-radius: 12px; font-family: var(--font-body); font-size: 0.95rem; outline: none; background: #fff;">
+                            </div>
+                            <div style="margin-bottom: 1.8rem;">
+                                <textarea class="form-control" placeholder="What can we help you with?" style="width: 100%; min-height: 130px; padding: 1.05rem 1.2rem; border: 1px solid #e5e7eb; border-radius: 12px; font-family: var(--font-body); font-size: 0.95rem; outline: none; resize: vertical; background: #fff;"></textarea>
+                            </div>
+                            <button type="submit" style="width: 100%; background: #000000; color: #ffffff; padding: 1.1rem; border: none; border-radius: 12px; font-family: var(--font-heading); font-weight: 800; font-size: 0.95rem; letter-spacing: 1.5px; cursor: pointer; transition: background 0.2s;">GET IN TOUCH</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <!-- Left: Official AltStart Logo -->
+        <div class="footer-brand">
+            <img src="assets/logo-footer.png" alt="AltStart" style="height: 2.5rem; width: auto; display: block;">
+        </div>
+
+        <!-- Center: Contact info -->
+        <div class="footer-contact">
+            <div class="footer-contact-item">
+                <span class="footer-contact-icon">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </span>
+                <div>
+                    <h4>Contact Us</h4>
+                    <p>+91 91825 67700</p>
+                </div>
+            </div>
+            <div class="footer-contact-item">
+                <span class="footer-contact-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </span>
+                <div>
+                    <h4>Email</h4>
+                    <p>altstart.contact@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Social -->
+        <div class="footer-social">
+            <h4>FOLLOW US ON</h4>
+            <div class="footer-social-icons">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Far right: copyright -->
+        <div class="footer-copyright">
+            <p>© 2024 — Copyright</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <!-- Scroll to top -->
+        <button class="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background: #333; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: none; cursor: pointer; margin-bottom: 10px; margin-left: auto;">
+            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: #fff;"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+        </button>
+
+        <!-- Popup Chatbot Modal -->
+        <div id="chat-popup" class="chat-modal-window" style="display: none;">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <span class="online-indicator"></span>
+                    <strong>AltStart Assistant</strong>
+                </div>
+                <button class="chat-close-btn" onclick="toggleChat()">&times;</button>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="chat-msg bot-msg">
+                    <div class="msg-text">👋 Hi! Welcome to AltStart. How can we help you today?</div>
+                </div>
+                <div class="chat-quick-options" id="chat-options">
+                    <button class="chat-opt-btn" onclick="sendQuickReply('Tell me about AltStart')">About AltStart</button>
+                    <button class="chat-opt-btn" onclick="sendQuickReply('Book a Consultation')">Book Free Consultation</button>
+                    <button class="chat-opt-btn" onclick="sendQuickReply('What services do you offer?')">Our Services</button>
+                    <button class="chat-opt-btn" onclick="sendQuickReply('Contact Info')">Contact Info</button>
+                </div>
+            </div>
+            <form class="chat-input-bar" onsubmit="handleChatSubmit(event)">
+                <input type="text" id="chat-user-input" placeholder="Type a message..." autocomplete="off">
+                <button type="submit" class="chat-send-btn">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Floating chat tooltip bubble with crossbar -->
+        <div id="chat-tooltip" class="chat-tooltip-bubble">
+            <span>We Are Here! 👋</span>
+            <button type="button" class="chat-tooltip-close" onclick="closeChatTooltip(event)" aria-label="Close message">&times;</button>
+        </div>
+
+        <!-- Chat icon bubble -->
+        <button class="chat-icon-btn" onclick="toggleChat()" aria-label="Open Chat">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 5.92 2 10.75C2 13.5 3.51 15.93 5.8 17.5V22L9.58 19.53C10.35 19.68 11.16 19.75 12 19.75C17.52 19.75 22 15.83 22 11C22 6.17 17.52 2 12 2Z" fill="currentColor"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Calendly Modal Overlay -->
+    <div id="calendly-modal" class="calendly-overlay" style="display: none;">
+        <button class="calendly-close-overlay" onclick="closeCalendlyModal()">&times;</button>
+        
+        <div class="calendly-card">
+            <!-- Ribbon -->
+            <div class="calendly-ribbon">POWERED BY<br><strong>Calendly</strong></div>
+
+            <!-- Step 1: Initial Option -->
+            <div id="calendly-step-1">
+                <h3 class="calendly-brand-title">Alt Start</h3>
+                <p class="calendly-brand-subtitle">
+                    Welcome to my scheduling page. Please follow the instructions to add an event to my calendar.
+                </p>
+                <div class="calendly-divider"></div>
+                
+                <div class="calendly-event-option" onclick="openCalendlyStep2()">
+                    <div class="purple-dot"></div>
+                    <span class="event-name">30 Minute Meeting</span>
+                    <span class="event-arrow">&#9654;</span>
+                </div>
+                
+                <div class="calendly-footer">
+                    <a href="#" onclick="alert('Cookie settings: Necessary cookies active.'); return false;">Cookie settings</a>
+                </div>
+            </div>
+
+            <!-- Step 2: Select Date & Time -->
+            <div id="calendly-step-2" style="display: none;">
+                <button type="button" class="calendly-back-btn" onclick="openCalendlyStep1()">&#8592; Back</button>
+                <h3 class="calendly-brand-title">Select Date &amp; Time</h3>
+                <p class="calendly-brand-subtitle">30 Minute Meeting with AltStart Team</p>
+                
+                <div class="calendly-booking-grid">
+                    <div class="calendly-date-picker">
+                        <label for="booking-date">Date:</label>
+                        <input type="date" id="booking-date" value="2026-07-24" class="calendly-input" style="margin-bottom:0;">
+                    </div>
+                    <div class="calendly-time-slots">
+                        <label>Available Times:</label>
+                        <div class="time-btns">
+                            <button type="button" class="time-slot-btn" onclick="selectTimeSlot(this, '10:00 AM')">10:00 AM</button>
+                            <button type="button" class="time-slot-btn" onclick="selectTimeSlot(this, '02:00 PM')">02:00 PM</button>
+                            <button type="button" class="time-slot-btn" onclick="selectTimeSlot(this, '04:30 PM')">04:30 PM</button>
+                        </div>
+                    </div>
+                </div>
+
+                <form onsubmit="confirmBooking(event)" style="margin-top: 1rem;">
+                    <input type="text" id="book-name" placeholder="Your Name" required class="calendly-input">
+                    <input type="email" id="book-email" placeholder="Your Email" required class="calendly-input">
+                    <button type="submit" class="calendly-confirm-btn">Confirm Meeting</button>
+                </form>
+            </div>
+
+            <!-- Step 3: Confirmation -->
+            <div id="calendly-step-3" style="display: none; text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 0.5rem;">🎉</div>
+                <h3 class="calendly-brand-title" style="font-size: 1.4rem;">Meeting Scheduled!</h3>
+                <p id="booking-confirmation-msg" class="calendly-brand-subtitle" style="color: #334155; margin-top: 0.8rem;"></p>
+                <button type="button" class="btn-talk" onclick="closeCalendlyModal()" style="margin: 1.5rem auto 0 auto; display: block;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>

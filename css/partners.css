@@ -1,0 +1,47 @@
+/* Partners Carousel */
+.partners-section {
+  margin-bottom: 6rem;
+  overflow: hidden; /* Hide scrollbar */
+  width: 100%;
+}
+.marquee-container {
+  display: flex;
+  width: 200%;
+  animation: marquee 30s linear infinite;
+}
+.marquee-container:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.partners-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%; /* Since container is 200%, this makes the single set 100% of viewport */
+  gap: 3rem;
+  padding: 0 1.5rem;
+}
+
+.partner-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 150px;
+}
+
+.partner-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.partner-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+}
